@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.examenappmoviles.ui.theme.ExamenAppMovilesTheme
+import com.example.examenappmoviles.view.screens.UserScreen
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -33,37 +34,41 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ExamenAppMovilesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerpadding ->
-                    UserCard()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    androidx.compose.foundation.layout.Box(
+                        modifier = Modifier.padding(innerPadding)
+                    ) {
+                        UserScreen()
+                    }
                 }
             }
         }
     }
 }
 
-@Composable
-fun UserCard(){
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 50.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-    ){
-        Row(modifier = Modifier.padding(16.dp))
-        {
-            Column(modifier = Modifier)
-            {
-                Text(text = "Icon")
-
-                Text(text = "Nombre")
-
-                Text(text = "EstadoIcon")
-
-                Button(onClick = {/*accion*/}) {
-                    Text(text = "Seguir")
-                }
-            }
-
-        }
-    }
-}
+//@Composable
+//fun UserCard(){
+//    Card(
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .padding(horizontal = 16.dp, vertical = 50.dp),
+//        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+//    ){
+//        Row(modifier = Modifier.padding(16.dp))
+//        {
+//            Column(modifier = Modifier)
+//            {
+//                Text(text = "Icon")
+//
+//                Text(text = "Nombre")
+//
+//                Text(text = "EstadoIcon")
+//
+//                Button(onClick = {/*accion*/}) {
+//                    Text(text = "Seguir")
+//                }
+//            }
+//
+//        }
+//    }
+//}
