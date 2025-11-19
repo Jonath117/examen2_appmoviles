@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.examenappmoviles.ui.theme.ExamenAppMovilesTheme
+import com.example.examenappmoviles.view.components.UserCard
 import com.example.examenappmoviles.view.screens.UserScreen
 
 class MainActivity : ComponentActivity() {
@@ -34,12 +35,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ExamenAppMovilesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    androidx.compose.foundation.layout.Box(
-                        modifier = Modifier.padding(innerPadding)
-                    ) {
-                        UserScreen()
-                    }
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerpadding ->
+                    UserScreen()
                 }
             }
         }
